@@ -8,20 +8,22 @@
   <title>Frontend Mentor | Clipboard landing page</title>
 </head>
 <body>
-  <header>
-    <div>
-      <img src="images/logo.svg" alt="company logo" class="logo">
-    </div>
-    <h1>A history of everything you copy</h1>
-    <p>
-      Clipboard allows you to track and organize everything you 
-      copy. Instantly access your clipboard on all your devices.
-    </p>
-    <div class="download_btns">
-      <button>Download for iOS</button>
-      <button>Download for Mac</button>
-    </div>
-  </header>
+  <div class="container_header">
+    <header>
+      <div>
+        <img src="images/logo.svg" alt="company logo" class="logo">
+      </div>
+      <h1>A history of everything you copy</h1>
+      <p>
+        Clipboard allows you to track and organize everything you 
+        copy. Instantly access your clipboard on all your devices.
+      </p>
+      <div class="download_btns">
+        <button>Download for iOS</button>
+        <button>Download for Mac</button>
+      </div>
+    </header>
+  </div>
   <main>
     <section class="first_sect">
       <h2>Keep track of your snippets</h2>
@@ -95,7 +97,7 @@
         </article>
       </div>
     </section>
-    <section class="company_logo" class="four_sect">
+    <section class="company_logo">
       <ul>
         <li><img src="images/logo-google.png" alt="google logo"></li>
         <li><img src="images/logo-ibm.png" alt="IBM logo"></li>
@@ -116,26 +118,28 @@
       </div>
     </section>
   </main>
-  <footer>
-    <div>
-      <img src="images/logo.svg" alt="company_logo">
-    </div>
-    <ul class="ftr_links">
-      <li><a href="#">FAQs</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Press Kit</a></li>
-      <li><a href="#">Install Guide</a></li>
-    </ul>
-    <ul class="media_logos">
-      <li><img src="images/icon-facebook.svg" alt="facebook icon"></li>
-      <li><img src="images/icon-twitter.svg" alt="twitter icon"></li>
-      <li><img src="images/icon-instagram.svg" alt="instagram icon"></li>
-    </ul>
-    <!--<p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>-->
-  </footer>
+  <div class="container_footer">
+    <footer>
+      <div>
+        <img src="images/logo.svg" alt="company_logo" class="logo_ftr">
+      </div>
+      <ul class="ftr_links">
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press Kit</a></li>
+        <li><a href="#">Install Guide</a></li>
+      </ul>
+      <ul class="media_logos">
+        <li><img src="images/icon-facebook.svg" alt="facebook icon"></li>
+        <li><img src="images/icon-twitter.svg" alt="twitter icon"></li>
+        <li><img src="images/icon-instagram.svg" alt="instagram icon"></li>
+      </ul>
+      <!--<p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </p>-->
+    </footer>
+  </div>
 </body>
 </html>

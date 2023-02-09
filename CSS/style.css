@@ -23,7 +23,19 @@ header,main,footer {
     width:85%;
     margin:0 auto;
 }
-
+.container_header {
+    background-image: url("../images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 7em;
+}
+.container_footer {
+    background-color: hsl(0, 0%, 95.7%);
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+}
 img {
     max-width:100%;
 }
@@ -42,6 +54,7 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 1.7rem;
+    margin-block:1.9em .7em;
 }
 h2 {
     font-size: 1.44rem;
@@ -51,9 +64,14 @@ h3 {
 }
 p {
     color: var(--grayish-blue);
-    font-size:1rem;
+    font-size:.92rem;
     text-align: center;
+    line-height: 1.5;
 }
+h2 ~ p {
+    margin-block: 1em 4em;
+}
+
 button {
     font-family: 'Bai Jamjuree', sans-serif;
     padding-block: .8rem;
@@ -61,14 +79,38 @@ button {
     width:100%;
     font-size: 1.1rem;
     color:white;
-    border-radius: 13px;
+    border-radius: 30px;
     border:none;
     font-weight: 600;
+}
+
+section + section {
+    margin-top: 8em;
+}
+article + article {
+    margin-top:2.5em;
+}
+
+.third_sect article > div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+.company_logo ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3em;
+}
+
+h3 {
+    margin-bottom:.9em;
 }
 .download_btns {
     display: flex;
     flex-direction: column;
     gap:1.2em;
+    margin-block:3em 9em;
 }
 .download_btns button:nth-child(1){
     background-color: var(--strong-cyan);
@@ -77,4 +119,28 @@ button {
 .download_btns button:nth-child(2){
     background-color: var(--light-blue);
     border-bottom: 3px solid hsl(233, 81%, 61%);
+}
+footer {
+    padding-block:2.8em;
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+    align-items: center;
+}
+.ftr_links {
+    text-align: center;
+    display: grid;
+    gap:1em;
+}
+.media_logos {
+    display: flex;
+    gap:2em;
+    align-items: flex-end;
+    margin-top:.7em;
+}
+.logo_ftr {
+    width:3em;
+}
+.first_sect > div div:first-child {
+    margin-bottom:3em;
 }
