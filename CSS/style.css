@@ -53,14 +53,14 @@ h1, h2, h3 {
     text-align: center;
 }
 h1 {
-    font-size: 1.7rem;
+    font-size: clamp(1.7rem, 1.3rem + 1.9vw, 2.8rem);
     margin-block:1.9em .7em;
 }
 h2 {
-    font-size: 1.44rem;
+    font-size: clamp(1.44rem, 1.04rem + 1.6vw, 2.1rem);
 }
 h3 {
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 0.8rem + 1.6vw, 1.56rem);
 }
 p {
     color: var(--grayish-blue);
@@ -68,8 +68,19 @@ p {
     text-align: center;
     line-height: 1.5;
 }
+
+h1 ~ p {
+    font-size:clamp(.92rem, .6rem + 1.5vw, 1.25rem);
+}
+
 h2 ~ p {
     margin-block: 1em 4em;
+    font-size:clamp(.92rem, .5rem + 1.5vw, 1.1rem);
+}
+h1 ~ p,
+h2 ~ p {
+    max-width:42rem;
+    margin-inline:  auto;
 }
 
 button {
@@ -82,6 +93,13 @@ button {
     border-radius: 30px;
     border:none;
     font-weight: 600;
+    max-width:15em;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: opacity .2s ease-in;
+}
+button:hover {
+    opacity:0.7;
 }
 
 section + section {
@@ -97,9 +115,9 @@ article + article {
     margin-bottom: 2em;
 }
 .company_logo ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
     gap:3em;
 }
 
@@ -122,15 +140,15 @@ h3 {
 }
 footer {
     padding-block:2.8em;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap:2em;
-    align-items: center;
+    justify-items: center;
 }
 .ftr_links {
     text-align: center;
-    display: grid;
-    gap:1em;
+}
+.ftr_links li + li {
+    margin-block: 1em;
 }
 .media_logos {
     display: flex;
@@ -138,9 +156,109 @@ footer {
     align-items: flex-end;
     margin-top:.7em;
 }
+.media_logos a {
+    width:24px;
+    height:20px;
+    display: block;
+}
+.facebook_icon,
+.instagram_icon,
+.twitter_icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.facebook_icon {
+    background-image: url("../images/icon-facebook.svg");
+}
+.facebook_icon:hover {
+    background-image: url("../images/icon-facebook-green.svg");
+}
+.twitter_icon {
+    background-image: url("../images/icon-twitter.svg");
+}
+.twitter_icon:hover {
+    background-image: url("../images/icon-twitter-green.svg");
+}
+.instagram_icon {
+    background-image: url("../images/icon-instagram.svg");
+}
+.instagram_icon:hover {
+    background-image: url("../images/icon-instagram-green.svg");
+}
 .logo_ftr {
     width:3em;
 }
 .first_sect > div div:first-child {
     margin-bottom:3em;
+}
+
+@media(min-width:630px) {
+    .container_header {
+        background-image: url("../images/bg-header-desktop.png");
+    }
+    button {
+        margin: initial;
+    }
+    .download_btns {
+        flex-direction: initial;
+        justify-content: center;
+    }
+    .first_sect > div {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+    }
+    .first_sect > div div:first-child img {
+        position:absolute;
+        left:-2em;
+        width:55%;
+    }
+    .first_sect > div div:nth-child(2) {
+        margin-top: 3em;
+    }
+    .first_sect h3 {
+        text-align:left;
+    }
+    .first_sect h3 ~ p {
+        text-align:left;
+        max-width:21em;
+    }
+    .second_sect {
+        margin-top:14em;
+    }
+    .second_sect img {
+        display: block;
+        margin-inline: auto;
+    }
+    .third_sect > div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: baseline;
+        gap: 1.2em;
+    }
+    .company_logo ul {
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    }
+    .ftr_links {
+        display: grid;
+        gap: 1em;
+        text-align: left;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .ftr_links li + li {
+        margin-bottom: 0;
+    }
+    .ftr_links a {
+        transition: color .2s ease-out;
+    }
+    .ftr_links a:hover {
+        color:var(--strong-cyan);
+    }
+
+    footer {
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items: center;
+        justify-items: initial;
+    }
+    
 }
